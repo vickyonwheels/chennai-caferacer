@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VickyOnWheels | MotoVlogs</title>
+
+  <!-- SEO META TAGS -->
+  <meta name="description" content="MotoVlogs by VickyOnWheels — Ride, Record, Relive. Adventure rides, motorcycle gear guides, wallpapers, Spotify playlists, and Instagram highlights.">
+  <meta name="keywords" content="MotoVlogs, Motorcycle Vlogs, VickyOnWheels, Adventure Rides, Bike Wallpapers, Gear Guides, Biker Lifestyle">
+  <meta name="author" content="VickyOnWheels">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="VickyOnWheels | MotoVlogs">
+  <meta property="og:description" content="Ride, Record, Relive — MotoVlogs, Gear Guides, Wallpapers, Playlists, and Adventures.">
+  <meta property="og:image" content="https://vickyonwheels.github.io/gt650.jpg">
+  <meta property="og:url" content="https://vickyonwheels.github.io">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VickyOnWheels | MotoVlogs">
+  <meta name="twitter:description" content="Ride, Record, Relive — MotoVlogs, Gear Guides, Wallpapers, Playlists, and Adventures.">
+  <meta name="twitter:image" content="https://vickyonwheels.github.io/gt650.jpg">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff4500">
+  <link rel="apple-touch-icon" href="/images/vow-logo-192.png">
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #fff;
+      background: url('abstract-bg.jpg') center/cover fixed no-repeat;
+    }
+
+    /* Navbar */
+    header {position: fixed; top: 0; left: 0; width: 100%; background: rgba(0,0,0,0.8); display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; z-index: 1000;}
+    .logo {font-size: 1.8rem; font-weight: bold; color: #ff4500; white-space: nowrap;}
+    .logo span {color: #fff;}
+    nav ul {display: flex; list-style: none;}
+    nav ul li {margin: 0 15px;}
+    nav ul li a {color: #fff; font-size: 1rem;}
+    nav ul li a:hover {color: #ff4500;}
+
+    /* Hero 16:9 */
+    .hero {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: url('gt650.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+      margin-top: 60px;
+    }
+    .hero h1 {font-size: 3rem; margin-bottom: 15px; text-shadow: 2px 2px 10px #000;}
+    .hero p {font-size: 1.2rem; margin-bottom: 25px;}
+    .btn {background: #ff4500; padding: 12px 25px; border-radius: 30px; color: #fff; font-weight: bold;}
+    .btn:hover {background: #e63e00;}
+
+    /* Sections */
+    .about, .gear, .instagram, .wallpapers, .spotify, .videos {
+      padding: 80px 20px;
+      background: rgba(0,0,0,0.7);
+      text-align: center;
+    }
+    h2 {font-size: 2.5rem; margin-bottom: 40px;}
+
+    /* Card grids */
+    .card-grid, .spotify-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .card {background: #1a1a1a; border-radius: 12px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;}
+    .card:hover {transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5);}
+    .card img {width: 100%; height: 200px; object-fit: cover;}
+    .card h3 {padding: 10px;}
+    .card a {display: inline-block; background: #ff4500; color: #fff; padding: 8px 16px; border-radius: 20px; margin: 10px;}
+    .card a:hover {background: #e63e00;}
+
+    /* Instagram embed */
+    .insta-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;}
+    blockquote.instagram-media {margin: auto; background: #1a1a1a; border-radius: 12px; padding: 10px;}
+
+    /* Spotify */
+    .spotify-grid iframe {width: 100%; height: 200px; border-radius: 12px;}
+
+    /* Videos */
+    .video-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;}
+    .video-card {background: #1e1e1e; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;}
+    .video-card:hover {transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.5);}
+    .video-card img {width: 100%; height: 200px; object-fit: cover;}
+    .video-card h3 {padding: 15px; font-size: 1.2rem; color: #ff4500;}
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {font-size: 2.2rem;}
+      .hero p {font-size: 1rem;}
+      header {padding: 15px 20px;}
+      .logo {font-size: 1.2rem;}
+      nav ul li {margin: 0 8px;}
+      nav ul li a {font-size: 0.9rem;}
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="navbar">
+    <div class="logo">Vicky<span>OnWheels</span></div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gear">Gear Guides</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#wallpapers">Wallpapers</a></li>
+        <li><a href="#spotify">Spotify</a></li>
+        <li><a href="#videos">Videos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Ride. Record. Relive.</h1>
+      <p>Follow my journey across highways, cities, and mountains through Moto-Vlogs.</p>
+      <a href="#videos" class="btn">Watch My Vlogs</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I'm a passionate rider who documents adventures on two wheels. From city rides to mountain trails, I bring you raw, real, and thrilling Moto-Vlogs. Subscribe and join the ride!</p>
+  </section>
+
+  <!-- GEAR GUIDES -->
+  <section id="gear" class="gear">
+    <h2>Motorcycle Gear Guides</h2>
+    <div class="card-grid">
+      <div class="card"><img src="https://via.placeholder.com/400x250" alt="Helmet"><h3>Best Helmets</h3><a href="https://example.com/helmet" target="_blank">View Gear</a></div>
+      <div class="card"><img src="https://via.placeholder.com/400x250" alt="Jacket"><h3>Riding Jackets</h3><a href="https://example.com/jacket" target="_blank">View Gear</a></div>
+      <div class="card"><img src="https://via.placeholder.com/400x250" alt="Gloves"><h3>Gloves & Accessories</h3><a href="https://example.com/gloves" target="_blank">View Gear</a></div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section id="instagram" class="instagram">
+    <h2>Instagram Highlights</h2>
+    <div class="insta-grid">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cv2vxyz123/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Ct4abc456/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Cq9def789/" data-instgrm-version="14"></blockquote>
+    </div>
+  </section>
+
+  <!-- WALLPAPERS -->
+  <section id="wallpapers" class="wallpapers">
+    <h2>Cool Wallpapers</h2>
+    <div class="card-grid">
+      <div class="card"><img src="https://via.placeholder.com/400x250" alt="Wallpaper 1"></div>
+      <div class="card"><img src="https://via.placeholder.com/400x250" alt="Wallpaper 2"></div>
+      <div class="card"><img src="https://via.placeholder.com/400x250" alt="Wallpaper 3"></div>
+      <div class="card"><img src="https://via.placeholder.com/400x250" alt="Wallpaper 4"></div>
+    </div>
+  </section>
+
+  <!-- SPOTIFY -->
+  <section id="spotify" class="spotify">
+    <h2>My Spotify Playlists</h2>
+    <div class="spotify-grid">
+      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX0XUsuxWHRQd" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section id="videos" class="videos">
+    <h2>Latest Vlogs</h2>
+    <div class="video-grid">
+      <div class="video-card"><img src="https://img.youtube.com/vi/VIDEO_ID1/maxresdefault.jpg" alt="Vlog 1"><h3>Epic Mountain Ride</h3></div>
+      <div class="video-card"><img src="https://img.youtube.com/vi/VIDEO_ID2/maxresdefault.jpg" alt="Vlog 2"><h3>Night City Adventure</h3></div>
+      <div class="video-card"><img src="https://img.youtube.com/vi/VIDEO_ID3/maxresdefault.jpg" alt="Vlog 3"><h3>Highway Thrills</h3></div>
+    </div>
+  </section>
+
+  <!-- Instagram Embed Script -->
+  <script async src="//www.instagram.com/embed.js"></script>
+
+  <!-- PWA Service Worker Registration -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/service-worker.js")
+        .then(reg => console.log("Service Worker registered:", reg))
+        .catch(err => console.error("Service Worker error:", err));
+    }
+  </script>
+</body>
+</html>
