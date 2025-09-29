@@ -1,0 +1,20 @@
+{
+  "name": "VickyOnWheels MotoVlogs",
+  "short_name": "MotoVlogs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff4500",
+  "icons": [
+    {
+      "src": "/images/vow-logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/vow-logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
